@@ -33,7 +33,7 @@ m <- stan(
     chains = 4,
     iter = 2000, 
     warmup = 500,
-    control = list(max_treedepth = 15),
+    control = list(max_treedepth = 15), seed = 1,
     save_warmup = FALSE
 )
 
