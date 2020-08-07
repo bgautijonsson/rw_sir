@@ -5,7 +5,7 @@ data {
   vector<lower = 0>[N_days] S;
   vector<lower = 0>[N_days] I;
   
-  int<lower = 0> dI_dt[N_days];
+  int<lower = 0> L[N_days];
   int<lower = 0> dR_dt[N_days];
 }
 
@@ -60,7 +60,7 @@ model {
   
   phi_inv_sqrt ~ std_normal();
   
-  dI_dt ~ neg_binomial_2_log(log_beta + log_I + log_S - log_N, phi);
+  L ~ neg_binomial_2_log(log_beta + log_I + log_S - log_N, phi);
   dR_dt ~ poisson_log(log_gamma + log_I);
   
   

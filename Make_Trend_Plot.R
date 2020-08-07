@@ -53,8 +53,8 @@ p1 <- plot_dat %>%
     geom_ribbon(aes(alpha = quantile)) +
     geom_line() +
     geom_point(data = d %>% 
-                   select(date, dI_dt) %>% 
-                   pivot_longer(c(dI_dt), 
+                   select(date, L) %>% 
+                   pivot_longer(c(L), 
                        names_to = ".variable",
                        values_to = "estimate") %>% 
                    mutate(.variable = as_factor(.variable)),

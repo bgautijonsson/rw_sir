@@ -13,7 +13,7 @@ N_days <- nrow(d)
 
 S <- d$S
 I <- d$I
-dI_dt <- d$dI_dt
+L <- d$L
 dR_dt <- d$dR_dt
 N <- d$N
 
@@ -22,7 +22,7 @@ stan_data <- list(
     N = N,
     S  = S,
     I = I,
-    dI_dt = dI_dt,
+    L = L,
     dR_dt = dR_dt
 )
 
